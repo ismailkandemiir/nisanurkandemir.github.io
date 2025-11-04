@@ -15,21 +15,19 @@
         }
         /* Yeni satırlar eklendiği için tablonun kaydırılabilir olması gerekebilir. */
         /* Bu kısım, tablo içeriğine kaydırma çubuğu ekler */
-        .table-container {
-            max-height: 70vh; /* Ekranın dikey yüksekliğinin %70'ini kaplar */
-            overflow-y: scroll; /* İçerik taştığında dikey kaydırma çubuğu gösterilir */
-        }
-        /* Başlıklar kayarken sabit kalsın diye thead'e ve th'ye sticky ayarı ekliyoruz */
-        .table-container table thead {
-            position: sticky;
-            top: 0; /* Scrollable div'in en üstüne yapışır */
-            z-index: 10; /* Z-index'i biraz yükseltelim */
-        }
-        .table-container table thead tr th {
-            /* Asıl sticky özelliği thead'e uygulandı ama th'de de top: 0 tutuluyor */
-            top: 0;
-            z-index: 10;
-        }
+        /* Tablo hover efekti - yumuşak aşağı kayma */
+.table-container {
+  max-height: 70vh;
+  overflow-y: auto;
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+.table-container:hover {
+  transform: translateY(10px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+          
     </style>
 </head>
 <body class="antialiased flex flex-col min-h-screen">
@@ -844,3 +842,4 @@
 
 </body>
 </html>
+
