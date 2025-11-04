@@ -13,6 +13,11 @@
             background-color: #f7f7f7;
             color: #333;
         }
+        /* Yeni satırlar eklendiği için tablonun kaydırılabilir olması gerekebilir. */
+        .table-container {
+            max-height: 70vh; /* Ekranın %70'ini kaplar */
+            overflow-y: auto; /* Dikeyde kaydırma çubuğu ekler */
+        }
     </style>
 </head>
 <body class="antialiased flex flex-col min-h-screen">
@@ -22,9 +27,9 @@
             <!-- Sol Başlık/Logo --><a href="index.html" class="text-xl font-bold text-green-700 hover:text-green-900 transition duration-300">
                 Nisanur Kandemir
             </a>
-            <!-- Sağ Menü --><nav class="space-x-4">
-                <!-- Anasayfa linki index.html'e yönlendiriyor --><a href="index.html" class="text-gray-600 hover:text-green-700 font-medium transition duration-300">Anasayfa</a>
-                <!-- Aktif sekme vurgulandı --><a href="odevler.html" class="text-green-700 font-bold transition duration-300 border-b-2 border-green-700">Ödevlerim</a>
+            <!-- Sağ Menü: Anasayfa ve Ödevlerim eklendi --><nav class="space-x-4">
+                <a href="index.html" class="text-gray-600 hover:text-green-700 font-medium transition duration-300">Anasayfa</a>
+                <!-- Ödevler sayfasına yönlendirme eklendi --><a href="odevler.html" class="text-green-700 font-bold transition duration-300 border-b-2 border-green-700">Ödevlerim</a>
             </nav>
         </div>
     </header>
@@ -32,13 +37,13 @@
     <!-- ANA İÇERİK: ÖDEV TABLOSU --><main class="flex-grow py-16 md:py-20 bg-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 class="text-4xl font-extrabold text-center text-gray-800 mb-12">
-                Programcılık Dersleri Ödev Listesi
+                Programcılık Dersleri Ödev Listesi (50 Ödev)
             </h1>
             
-            <div class="bg-white shadow-xl rounded-lg overflow-hidden">
+            <div class="bg-white shadow-xl rounded-lg overflow-hidden table-container">
                 <div class="overflow-x-auto">
                     <table class="min-w-full divide-y divide-gray-200">
-                        <!-- Tablo Başlık (Thead) --><thead class="bg-green-700 text-white">
+                        <!-- Tablo Başlıkları --><thead class="bg-green-700 text-white sticky top-0">
                             <tr>
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider w-1/2">
                                     Ödev Adı (İsim)
@@ -51,16 +56,17 @@
                                 </th>
                             </tr>
                         </thead>
-                        <!-- Tablo İçeriği (Tbody) --><tbody class="divide-y divide-gray-200">
+                        <!-- Tablo İçeriği (50 Satır) --><tbody class="divide-y divide-gray-200">
                             
-                                                        <!-- Ödev Satırı 3 --><tr class="hover:bg-green-50 transition duration-150">
+                            <!-- Ödev #1 --><tr class="hover:bg-green-50 transition duration-150">
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                    <span class="font-bold">Ödev #3:</span> odev adı
+                                    <span class="font-bold">Ödev #1</span>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    tarıh
+                                    x.x.2025
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <!-- Bu linki kendi ödev linkinizle değiştirmelisiniz. -->
                                     <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
                                         Görüntüle
                                         <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
@@ -68,12 +74,12 @@
                                 </td>
                             </tr>
                             
-                            <!-- Ödev Satırı 2 --><tr class="hover:bg-green-50 transition duration-150">
+                            <!-- Ödev #2 --><tr class="hover:bg-green-50 transition duration-150">
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                    <span class="font-bold">Ödev #2:</span> odev adı (HTML/CSS)
+                                    <span class="font-bold">Ödev #2</span>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    tarıh
+                                    x.x.2025
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
                                     <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
@@ -83,12 +89,12 @@
                                 </td>
                             </tr>
 
-                            <!-- Ödev Satırı 3 --><tr class="hover:bg-green-50 transition duration-150">
+                            <!-- Ödev #3 --><tr class="hover:bg-green-50 transition duration-150">
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                    <span class="font-bold">Ödev #3:</span> odev adı
+                                    <span class="font-bold">Ödev #3</span>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    tarıh
+                                    x.x.2025
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
                                     <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
@@ -97,12 +103,13 @@
                                     </a>
                                 </td>
                             </tr>
-                            <!-- Ödev Satırı 3 --><tr class="hover:bg-green-50 transition duration-150">
+
+                            <!-- Ödev #4 --><tr class="hover:bg-green-50 transition duration-150">
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                    <span class="font-bold">Ödev #3:</span> odev adı
+                                    <span class="font-bold">Ödev #4</span>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    tarıh
+                                    x.x.2025
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
                                     <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
@@ -111,12 +118,13 @@
                                     </a>
                                 </td>
                             </tr>
-                                                        <!-- Ödev Satırı 3 --><tr class="hover:bg-green-50 transition duration-150">
+
+                            <!-- Ödev #5 --><tr class="hover:bg-green-50 transition duration-150">
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                    <span class="font-bold">Ödev #3:</span> odev adı
+                                    <span class="font-bold">Ödev #5</span>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    tarıh
+                                    x.x.2025
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
                                     <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
@@ -125,12 +133,13 @@
                                     </a>
                                 </td>
                             </tr>
-                                                        <!-- Ödev Satırı 3 --><tr class="hover:bg-green-50 transition duration-150">
+
+                            <!-- Ödev #6 --><tr class="hover:bg-green-50 transition duration-150">
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                    <span class="font-bold">Ödev #3:</span> odev adı
+                                    <span class="font-bold">Ödev #6</span>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    tarıh
+                                    x.x.2025
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
                                     <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
@@ -139,13 +148,674 @@
                                     </a>
                                 </td>
                             </tr>
-                            <!-- İpucu: Yeni bir ödev eklemek için bu <tr>...</tr> bloğunu kopyalayıp yapıştırabilirsiniz. --></tbody>
+
+                            <!-- Ödev #7 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #7</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #8 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #8</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #9 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #9</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #10 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #10</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #11 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #11</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #12 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #12</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #13 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #13</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #14 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #14</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #15 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #15</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #16 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #16</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #17 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #17</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #18 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #18</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #19 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #19</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #20 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #20</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #21 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #21</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #22 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #22</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #23 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #23</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #24 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #24</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #25 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #25</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #26 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #26</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #27 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #27</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #28 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #28</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #29 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #29</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #30 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #30</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #31 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #31</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #32 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #32</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #33 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #33</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #34 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #34</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #35 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #35</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #36 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #36</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #37 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #37</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #38 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #38</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #39 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #39</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #40 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #40</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #41 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #41</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #42 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #42</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #43 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #43</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #44 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #44</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #45 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #45</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #46 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #46</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #47 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #47</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #48 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #48</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #49 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #49</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev #50 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #50</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    x.x.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                        </tbody>
                     </table>
                 </div>
             </div>
 
             <div class="mt-8 p-4 bg-white rounded-lg shadow-md text-sm text-gray-600">
-                <p><strong>DİKKAT:</strong> ".</p>
+                <p><strong>DİKKAT:</strong> Bu listedeki 50 ödevin her biri için, "Görüntüle" butonundaki linki (<code>href="#"</code> olan yerleri) kendi ödev dosyanızın **GitHub linki** ile değiştirmeniz gerekmektedir. Yeni ödevler ekledikçe bu satırları kopyalayarak kullanabilirsiniz.</p>
             </div>
 
         </div>
@@ -160,5 +830,3 @@
 
 </body>
 </html>
-
-
