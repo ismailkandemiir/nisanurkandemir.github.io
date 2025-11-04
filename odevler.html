@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödevlerim | Nisanur Kandemir</title>
+    <!-- Tailwind CSS CDN'i yükleniyor. --><script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Inter fontunu ekliyoruz */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <!-- SABİT BAŞLIK VE NAVİGASYON (MENÜ) --><header class="bg-white shadow-md sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
+            <!-- Sol Başlık/Logo --><a href="index.html" class="text-xl font-bold text-green-700 hover:text-green-900 transition duration-300">
+                Nisanur Kandemir
+            </a>
+            <!-- Sağ Menü --><nav class="space-x-4">
+                <!-- Anasayfa linki index.html'e yönlendiriyor --><a href="index.html" class="text-gray-600 hover:text-green-700 font-medium transition duration-300">Anasayfa</a>
+                <!-- Aktif sekme vurgulandı --><a href="odevler.html" class="text-green-700 font-bold transition duration-300 border-b-2 border-green-700">Ödevlerim</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ANA İÇERİK: ÖDEV TABLOSU --><main class="flex-grow py-16 md:py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-extrabold text-center text-gray-800 mb-12">
+                Programcılık Dersleri Ödev Listesi
+            </h1>
+            
+            <div class="bg-white shadow-xl rounded-lg overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <!-- Tablo Başlık (Thead) --><thead class="bg-green-700 text-white">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider w-1/2">
+                                    Ödev Adı (İsim)
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider w-1/4">
+                                    Yükleme Tarihi
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-center text-xs font-semibold uppercase tracking-wider w-1/4">
+                                    Dosya / Ek
+                                </th>
+                            </tr>
+                        </thead>
+                        <!-- Tablo İçeriği (Tbody) --><tbody class="divide-y divide-gray-200">
+                            
+                            <!-- Ödev Satırı 1 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #1:</span> Basit Hesap Makinesi (Python)
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    28.09.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <!-- Buraya ilgili GitHub dosya/repo linki eklenecek --><a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <!-- Ödev Satırı 2 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #2:</span> Kişisel Web Sayfası Giriş (HTML/CSS)
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    15.10.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Ödev Satırı 3 --><tr class="hover:bg-green-50 transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span class="font-bold">Ödev #3:</span> Sıralama Algoritmaları (Java)
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    05.11.2025
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                    <a href="#" target="_blank" class="text-green-600 hover:text-green-900 flex items-center justify-center">
+                                        Görüntüle
+                                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <!-- İpucu: Yeni bir ödev eklemek için bu <tr>...</tr> bloğunu kopyalayıp yapıştırabilirsiniz. --></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="mt-8 p-4 bg-white rounded-lg shadow-md text-sm text-gray-600">
+                <p><strong>DİKKAT:</strong> "Dosya / Ek" sütunundaki "Görüntüle" linklerini, ilgili ödevin GitHub deposuna veya canlı demolarına yönlendiren URL'ler ile değiştirmeyi unutmayın.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ALT BİLGİ (FOOTER) --><footer class="bg-gray-800 text-white py-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-sm">&copy; 2025 Nisanur Kandemir. Tüm Hakları Saklıdır.</p>
+            <p class="text-xs mt-2 text-gray-400">GitHub Pages ile ücretsiz barındırılmaktadır.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

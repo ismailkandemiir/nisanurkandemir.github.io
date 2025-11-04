@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nisanur Kandemir | Bilgisayar Programcılığı</title>
+    <!-- Tailwind CSS CDN'i yükleniyor. --><script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Inter fontunu ekliyoruz */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        /* Menüye pürüzsüz kaydırma efekti eklemek için */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Ekranın tamamını kaplaması için minimum yükseklik ayarı */
+        #home {
+            min-height: calc(100vh - 80px); /* Ekran yüksekliği eksi footer ve header yüksekliği */
+            display: flex;
+            align-items: center; /* İçeriği dikeyde ortalar */
+            justify-content: center; /* İçeriği yatayda ortalar */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- SABİT BAŞLIK VE NAVİGASYON (MENÜ) --><header class="bg-white shadow-md sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
+            <!-- Sol Başlık/Logo --><a href="index.html" class="text-xl font-bold text-green-700 hover:text-green-900 transition duration-300">
+                Nisanur Kandemir
+            </a>
+            <!-- Sağ Menü: Anasayfa ve Ödevlerim eklendi --><nav class="space-x-4">
+                <a href="index.html" class="text-green-700 font-bold transition duration-300 border-b-2 border-green-700">Anasayfa</a>
+                <!-- Ödevler sayfasına yönlendirme eklendi --><a href="odevler.html" class="text-gray-600 hover:text-green-700 font-medium transition duration-300">Ödevlerim</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ANA BÖLÜM: GİRİŞ VE HOŞ GELDİNİZ MESAJI (Ekranı kaplayacak şekilde ayarlandı) --><section id="home" class="py-20 md:py-32 bg-green-700 text-white flex-grow">
+        <div class="max-w-4xl mx-auto px-6 text-center flex items-center justify-center space-x-8">
+            <!-- Sol Tarafa Logo --><div class="hidden md:block"> <!-- Orta ve büyük ekranlarda görünür --><img src="cukurova_uni_logo.png" alt="Cu_Logo.png" class="w-32 h-32 lg:w-48 lg:h-48 rounded-full shadow-lg">
+            </div>
+            
+            <!-- Sağ Tarafa Yazı --><div>
+                <!-- Ana Giriş Başlığı --><h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4">
+                    Bilgisayar Programcılığı Proje Portföyü
+                </h1>
+                <!-- İsim Yazısı --><p class="text-2xl sm:text-3xl font-light opacity-90 mb-8">
+                    Hazırlayan: <span class="font-semibold">Nisanur Kandemir</span>
+                </p>
+                <p class="text-lg opacity-80">
+                    Bu, ders kapsamındaki çalışmalarıma ait kişisel sayfamdır. Menüden ödevlerime ulaşabilirsiniz.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ALT BİLGİ (FOOTER) --><footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-sm">&copy; 2025 Nisanur Kandemir. Tüm Hakları Saklıdır.</p>
+            <p class="text-xs mt-2 text-gray-400">GitHub Pages ile ücretsiz barındırılmaktadır.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
