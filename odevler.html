@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ödevlerim | Nisa Nur Kandemir</title>
+    <title>Ödevlerim | Nisanur Kandemir</title>
     <!-- Tailwind CSS CDN'i yükleniyor. --><script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Inter fontunu ekliyoruz */
@@ -17,13 +17,18 @@
         /* Bu kısım, tablo içeriğine kaydırma çubuğu ekler */
         .table-container {
             max-height: 70vh; /* Ekranın dikey yüksekliğinin %70'ini kaplar */
-            overflow-y: auto; /* İçerik taştığında dikey kaydırma çubuğu gösterilir */
+            overflow-y: scroll; /* İçerik taştığında dikey kaydırma çubuğu gösterilir */
         }
-        /* Başlıklar kayarken sabit kalsın diye ekliyoruz (sticky) */
-        .table-container table thead tr th {
-            top: 0;
+        /* Başlıklar kayarken sabit kalsın diye thead'e ve th'ye sticky ayarı ekliyoruz */
+        .table-container table thead {
             position: sticky;
-            z-index: 5; /* Diğer içeriklerin üstünde kalmasını sağlar */
+            top: 0; /* Scrollable div'in en üstüne yapışır */
+            z-index: 10; /* Z-index'i biraz yükseltelim */
+        }
+        .table-container table thead tr th {
+            /* Asıl sticky özelliği thead'e uygulandı ama th'de de top: 0 tutuluyor */
+            top: 0;
+            z-index: 10;
         }
     </style>
 </head>
@@ -32,7 +37,7 @@
     <!-- SABİT BAŞLIK VE NAVİGASYON (MENÜ) --><header class="bg-white shadow-md sticky top-0 z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
             <!-- Sol Başlık/Logo --><a href="index.html" class="text-xl font-bold text-green-700 hover:text-green-900 transition duration-300">
-                Nisa Nur Kandemir
+                Nisanur Kandemir
             </a>
             <!-- Sağ Menü: Anasayfa ve Ödevlerim eklendi --><nav class="space-x-4">
                 <a href="index.html" class="text-gray-600 hover:text-green-700 font-medium transition duration-300">Anasayfa</a>
@@ -832,7 +837,7 @@
 
     <!-- ALT BİLGİ (FOOTER) --><footer class="bg-gray-800 text-white py-8 mt-auto">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-sm">&copy; 2025 Nisa Nur Kandemir. Tüm Hakları Saklıdır.</p>
+            <p class="text-sm">&copy; 2025 Nisanur Kandemir. Tüm Hakları Saklıdır.</p>
             <p class="text-xs mt-2 text-gray-400">GitHub Pages ile ücretsiz barındırılmaktadır.</p>
         </div>
     </footer>
