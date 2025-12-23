@@ -43,7 +43,7 @@
     <main class="flex-grow py-16 md:py-20 bg-gray-100">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 class="text-3xl font-extrabold text-center text-gray-800 mb-8">
-                Programcılık Ödev Listesi (69 Adet)
+                Programcılık Ödev Listesi (105 Adet)
             </h1>
             
             <!-- Tablo Konteyneri: overflow-hidden kaldırıldı çünkü sticky'i bozuyordu -->
@@ -70,8 +70,14 @@
             </div>
 
             <div class="mt-6 p-4 bg-yellow-50 border-l-4 border-yellow-400 text-sm text-yellow-700">
-                <p><strong>Bilgi:</strong> Tüm liste sayfada görünmektedir. "Görüntüle" butonuna basarak ödevi açabilir, "İndir" butonu ile indirebilirsiniz.</p>
-                <p class="mt-2 text-xs text-yellow-800 opacity-80">* Dosyaların GitHub üzerinde <strong>dosyalar</strong> klasöründe ve isimlerinin <strong>odev1.html</strong> formatında olduğundan emin olun.</p>
+                <p><strong>Bilgi:</strong></p>
+                <ul class="list-disc list-inside mt-2 space-y-1">
+                    <li>"Görüntüle" butonuna basarak ödevi tarayıcıda açabilirsiniz.</li>
+                    <li>"İndir" butonuna bastığınızda dosya inmek yerine açılıyorsa: <strong>Butona sağ tıklayıp "Bağlantıyı Farklı Kaydet"</strong> diyerek indirebilirsiniz.</li>
+                </ul>
+                <p class="mt-3 text-xs text-yellow-800 opacity-80 border-t border-yellow-200 pt-2">
+                    * <strong>ÖNEMLİ:</strong> Bu sistemin çalışması için GitHub deponuzda <strong>dosyalar</strong> adında bir klasör oluşturmalı ve içine <strong>odev1.html</strong> ... <strong>odev105.html</strong> şeklinde dosyalarınızı yüklemelisiniz.
+                </p>
             </div>
 
         </div>
@@ -84,7 +90,7 @@
         </div>
     </footer>
 
-    <!-- JAVASCRIPT: 69 ÖDEVİ OTOMATİK OLUŞTURAN KOD -->
+    <!-- JAVASCRIPT: 105 ÖDEVİ OTOMATİK OLUŞTURAN KOD -->
     <script>
         // Tablonun gövdesini seçiyoruz
         const tableBody = document.getElementById('homework-list');
@@ -92,8 +98,8 @@
         // Performans için HTML içeriğini önce bu değişkende biriktireceğiz
         let htmlContent = '';
 
-        // 1'den 69'a kadar döngü kuruyoruz
-        for (let i = 1; i <= 69; i++) {
+        // 1'den 105'e kadar döngü kuruyoruz
+        for (let i = 1; i <= 105; i++) {
             // Dosya yolu: dosyalar/odev1.html
             const fileName = `dosyalar/odev${i}.html`;
             
