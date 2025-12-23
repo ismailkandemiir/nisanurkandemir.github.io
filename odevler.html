@@ -13,23 +13,25 @@
             background-color: #f7f7f7;
             color: #333;
         }
-        /* Tablo Kaydırma Ayarları */
+        /* GÜNCELLEME: Yükseklik kısıtlaması kaldırıldı.
+           Artık sayfa doğal akışında aşağı doğru uzayacak, böylece 69 ödevin hepsi görünür olacak.
+        */
         .table-container {
-            max-height: 70vh; /* Ekranın %70'i kadar yükseklik */
-            overflow-y: scroll; /* Kaydırma çubuğu her zaman görünsün */
+            /* max-height ve overflow kaldırıldı */
         }
-        /* Başlığın yapışkan olması için */
+        
+        /* Başlığın sayfa kaydırılırken menünün hemen altına yapışması için */
         .table-container table thead {
             position: sticky;
-            top: 0;
-            z-index: 10;
+            top: 72px; /* Menü yüksekliği kadar boşluk bırakıldı */
+            z-index: 9; /* Menünün (z-20) altında kalsın */
         }
     </style>
 </head>
 <body class="antialiased flex flex-col min-h-screen">
 
-    <!-- MENÜ -->
-    <header class="bg-white shadow-md sticky top-0 z-10">
+    <!-- MENÜ (z-index artırıldı: z-20) -->
+    <header class="bg-white shadow-md sticky top-0 z-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
             <a href="index.html" class="text-xl font-bold text-green-700 hover:text-green-900 transition duration-300">
                 Nisanur Kandemir
@@ -70,8 +72,8 @@
             </div>
 
             <div class="mt-6 p-4 bg-yellow-50 border-l-4 border-yellow-400 text-sm text-yellow-700">
-                <p><strong>Bilgi:</strong> "Aç" butonuna basarsanız ödev tarayıcıda açılır. "İndir" butonuna basarsanız dosya bilgisayarınıza iner.</p>
-                <p class="mt-2 text-xs text-yellow-800 opacity-80">* Bu sistem, dosyaların GitHub üzerinde <strong>dosyalar</strong> isimli bir klasörde olmasını bekler.</p>
+                <p><strong>Bilgi:</strong> Tüm liste artık sayfada görünmektedir. "Aç" butonuna basarsanız ödev tarayıcıda açılır, "İndir" butonuna basarsanız iner.</p>
+                <p class="mt-2 text-xs text-yellow-800 opacity-80">* Dosyaların GitHub üzerinde <strong>dosyalar</strong> klasöründe ve isimlerinin <strong>odev1.html</strong> formatında olduğundan emin olun.</p>
             </div>
 
         </div>
@@ -88,15 +90,17 @@
     <script>
         // Tablonun gövdesini seçiyoruz
         const tableBody = document.getElementById('homework-list');
+        
+        // Performans için HTML içeriğini önce bu değişkende biriktireceğiz
+        let htmlContent = '';
 
         // 1'den 69'a kadar döngü kuruyoruz
         for (let i = 1; i <= 69; i++) {
-            // Dosya yolu güncellendi: 'dosyalar' klasörü içine bakıyor
-            // Örnek: dosyalar/odev1.html
+            // Dosya yolu: dosyalar/odev1.html
             const fileName = `dosyalar/odev${i}.html`;
             
             // Tablo satırını oluşturuyoruz
-            const row = `
+            htmlContent += `
                 <tr class="hover:bg-green-50 transition duration-150">
                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                         Ödev ${i}
@@ -116,10 +120,10 @@
                     </td>
                 </tr>
             `;
-
-            // Oluşturulan satırı tabloya ekliyoruz
-            tableBody.innerHTML += row;
         }
+
+        // Biriken HTML'i tek seferde tabloya ekliyoruz (daha hızlı)
+        tableBody.innerHTML = htmlContent;
     </script>
 
 </body>
