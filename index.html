@@ -1,73 +1,89 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nisa Nur Kandemir | Bilgisayar Programcılığı</title>
-    <!-- Tailwind CSS CDN'i yükleniyor. --><script src="https://cdn.tailwindcss.com"></script>
+    <title>Nisanur Kandemir - Ödevler</title>
     <style>
-        /* Inter fontunu ekliyoruz */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        /* Sadece yazıları merkeze almak ve biraz okunur kılmak için çok temel stiller */
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f7f7f7;
-            color: #333;
+            font-family: Arial, sans-serif; /* Standart yazı tipi */
+            background-color: white;
+            color: black;
+            margin: 20px;
         }
-        /* Menüye pürüzsüz kaydırma efekti eklemek için */
-        html {
-            scroll-behavior: smooth;
+        h1, h2, h3 {
+            text-align: center;
         }
-        /* Ekranın tamamını kaplaması için minimum yükseklik ayarı */
-        #home {
-            min-height: calc(100vh - 80px); /* Ekran yüksekliği eksi footer ve header yüksekliği */
-            display: flex;
-            align-items: center; /* İçeriği dikeyde ortalar */
-            justify-content: center; /* İçeriği yatayda ortalar */
+        table {
+            margin-left: auto;
+            margin-right: auto;
+            border-collapse: collapse; /* Çizgileri tek çizgi yapar */
+            width: 60%; /* Tablo genişliği */
+        }
+        th, td {
+            border: 1px solid black; /* Siyah kenarlık */
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #eee; /* Başlıklar hafif gri olsun */
+            text-align: center;
+        }
+        td a {
+            color: blue; /* Linkler standart mavi */
+            text-decoration: underline;
         }
     </style>
 </head>
-<body class="antialiased">
+<body>
 
-    <!-- SABİT BAŞLIK VE NAVİGASYON (MENÜ) --><header class="bg-white shadow-md sticky top-0 z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
-            <!-- Sol Başlık/Logo --><a href="index.html" class="text-xl font-bold text-green-700 hover:text-green-900 transition duration-300">
-                Nisa Nur Kandemir
-            </a>
-            <!-- Sağ Menü: Anasayfa ve Ödevlerim eklendi --><nav class="space-x-4">
-                <a href="index.html" class="text-green-700 font-bold transition duration-300 border-b-2 border-green-700">Anasayfa</a>
-                <!-- Ödevler sayfasına yönlendirme eklendi --><a href="odevler.html" class="text-gray-600 hover:text-green-700 font-medium transition duration-300">Ödevlerim</a>
-            </nav>
-        </div>
-    </header>
+    <!-- BAŞLIK -->
+    <h1>Nisanur Kandemir</h1>
+    <h3>Bilgisayar Programcılığı - Ödev Listesi</h3>
+    <br>
 
-    <!-- ANA BÖLÜM: GİRİŞ VE HOŞ GELDİNİZ MESAJI (Ekranı kaplayacak şekilde ayarlandı) --><section id="home" class="py-20 md:py-32 bg-green-700 text-white flex-grow">
-        <div class="max-w-4xl mx-auto px-6 text-center flex items-center justify-center space-x-8">
-            <!-- Sol Tarafa Logo --><div class="hidden md:block"> <!-- Orta ve büyük ekranlarda görünür --><img src="Cu_Logo.png" alt="Çukurova Üniversitesi Logosu" class="w-32 h-32 lg:w-48 lg:h-48 rounded-full shadow-lg">
-            </div>
+    <!-- ÖDEV TABLOSU -->
+    <!-- border="1" en temel HTML tablo özelliğidir -->
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Ödev Adı</th>
+                <th style="text-align: center;">İşlem</th>
+            </tr>
+        </thead>
+        <tbody id="odev-listesi">
+            <!-- JavaScript burayı dolduracak -->
+        </tbody>
+    </table>
+
+    <br><br>
+    <center>
+        <small>&copy; 2025 Nisanur Kandemir</small>
+    </center>
+
+    <!-- BASİT JAVASCRIPT KODU -->
+    <script>
+        // Tabloyu buluyoruz
+        var tablo = document.getElementById("odev-listesi");
+        var htmlKodu = "";
+
+        // 1'den 129'a kadar döngü
+        for (var i = 1; i <= 129; i++) {
+            var dosyaAdi = "dosyalar/odev" + i + ".html";
             
-            <!-- Sağ Tarafa Yazı --><div>
-                <!-- Ana Giriş Başlığı --><h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4">
-                    Bilgisayar Programcılığı Proje Portföyü
-                </h1>
-                <!-- İsim Yazısı --><p class="text-2xl sm:text-3xl font-light opacity-90 mb-8">
-                    <span class="font-semibold">Nisa Nur Kandemir</span>
-                </p>
-                <p class="text-lg opacity-80">
-                    Bu, ders kapsamındaki çalışmalarıma ait kişisel sayfamdır. Menüden ödevlerime ulaşabilirsiniz.
-                </p>
-            </div>
-        </div>
-    </section>
+            // Basit HTML satırları oluşturuyoruz
+            htmlKodu += "<tr>";
+            htmlKodu += "<td>Ödev " + i + "</td>";
+            htmlKodu += "<td style='text-align: center;'>";
+            // Sadece Önizleme Linki
+            htmlKodu += "<a href='" + dosyaAdi + "' target='_blank'>Önizleme</a>";
+            htmlKodu += "</td>";
+            htmlKodu += "</tr>";
+        }
 
-    <!-- ALT BİLGİ (FOOTER) --><footer class="bg-gray-800 text-white py-8">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-sm">&copy; 2025 Nisa Nur Kandemir. Tüm Hakları Saklıdır.</p>
-            <p class="text-xs mt-2 text-gray-400">GitHub Pages ile ücretsiz barındırılmaktadır.</p>
-        </div>
-    </footer>
+        // Tabloya yazdırıyoruz
+        tablo.innerHTML = htmlKodu;
+    </script>
 
 </body>
 </html>
-
-
-
