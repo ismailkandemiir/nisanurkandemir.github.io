@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <title>Nisanur Kandemir - Ödevler</title>
     <style>
-        /* Sadece yazıları merkeze almak ve biraz okunur kılmak için çok temel stiller */
+        
         body {
-            font-family: Arial, sans-serif; /* Standart yazı tipi */
+            font-family: Arial, sans-serif; 
             background-color: white;
             color: black;
             margin: 20px;
@@ -17,33 +17,33 @@
         table {
             margin-left: auto;
             margin-right: auto;
-            border-collapse: collapse; /* Çizgileri tek çizgi yapar */
-            width: 60%; /* Tablo genişliği */
+            border-collapse: collapse; 
+            width: 60%; 
         }
         th, td {
-            border: 1px solid black; /* Siyah kenarlık */
+            border: 1px solid black; 
             padding: 10px;
             text-align: left;
         }
         th {
-            background-color: #eee; /* Başlıklar hafif gri olsun */
+            background-color: #eee; 
             text-align: center;
         }
         td a {
-            color: blue; /* Linkler standart mavi */
+            color: blue; 
             text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-    <!-- BAŞLIK -->
+    
     <h1>Nisanur Kandemir</h1>
     <h3>Bilgisayar Programcılığı - Ödev Listesi</h3>
     <br>
 
-    <!-- ÖDEV TABLOSU -->
-    <!-- border="1" en temel HTML tablo özelliğidir -->
+    
+    
     <table border="1">
         <thead>
             <tr>
@@ -52,7 +52,7 @@
             </tr>
         </thead>
         <tbody id="odev-listesi">
-            <!-- JavaScript burayı dolduracak -->
+            
         </tbody>
     </table>
 
@@ -61,29 +61,30 @@
         <small>&copy; 2025 Nisanur Kandemir</small>
     </center>
 
-    <!-- BASİT JAVASCRIPT KODU -->
+    
     <script>
-        // Tabloyu buluyoruz
+        
         var tablo = document.getElementById("odev-listesi");
         var htmlKodu = "";
 
-        // 1'den 129'a kadar döngü
+        
         for (var i = 1; i <= 129; i++) {
             var dosyaAdi = "dosyalar/odev" + i + ".html";
             
-            // Basit HTML satırları oluşturuyoruz
+            
             htmlKodu += "<tr>";
             htmlKodu += "<td>Ödev " + i + "</td>";
             htmlKodu += "<td style='text-align: center;'>";
-            // Sadece Önizleme Linki
+            
             htmlKodu += "<a href='" + dosyaAdi + "' target='_blank'>Önizleme</a>";
             htmlKodu += "</td>";
             htmlKodu += "</tr>";
         }
 
-        // Tabloya yazdırıyoruz
+        
         tablo.innerHTML = htmlKodu;
     </script>
 
 </body>
 </html>
+
